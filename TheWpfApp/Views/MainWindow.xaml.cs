@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TheWpfApp.Models;
 using TheWpfApp.ViewModels;
+using TheWpfApp.Views;
 
 namespace TheWpfApp
 {
@@ -22,57 +23,22 @@ namespace TheWpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainWindowViewModel viewModel=new MainWindowViewModel();
+        MainWindowViewModel viewModel = new MainWindowViewModel();
         public MainWindow()
         {
             InitializeComponent();
             //PersonalInfo Info = new PersonalInfo("סרגיי", "המגניב", "0545558745");
             DataContext = viewModel;
-            
+
             // MVVM
             // M - Models :class
             // V - View : UI
             // VM View Models : class
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnHome_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.Info = new PersonalInfo("Sergey","Vinhorn");
-            viewModel.Info.FName = "Avisar";
-           
-        }
-
-        private void TBAge_LostFocus(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-
-                int age_value = int.Parse(TBAge.Text);
-                if (age_value < 0 || age_value < 18)
-                {
-                    TBAge.Background = Brushes.Red;
-                }
-                else
-                {
-                    TBAge.Background = Brushes.White;
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void TBEmail_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if(TBEmail.Text.Contains('@')==false || TBEmail.Text.Contains('.') == false || TBEmail.Text.IndexOf('@')>TBEmail.Text.LastIndexOf('.')) // =into  ==equal
-            {
-                TBEmail.Background = Brushes.Red;
-            }
-            else
-            {
-                TBEmail.Background = Brushes.White;
-            }
+            MainContent.Content = new MainUserControl();
         }
     }
 }

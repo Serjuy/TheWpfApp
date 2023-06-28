@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="TheWpfApp.Views.MainUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TheWpfApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <!--<ContentControl x:Name="MainWindowContent"/>-->
+
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="{Binding Time}"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <TextBlock Text="First Name:" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Info.FName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" MinWidth="120" MaxHeight="25" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <TextBlock Text="Last Name:" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Info.LName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" MinWidth="120" MaxHeight="25" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <TextBlock Text="Phone:" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Info.Phone,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" MinWidth="120" MaxHeight="25" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <TextBlock Text="Age:" VerticalAlignment="Center"/>
+                <TextBox x:Name="TBAge" Text="{Binding Info.Age,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" LostFocus="TBAge_LostFocus" MinWidth="120" MaxHeight="25" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <TextBlock Text="Email:" VerticalAlignment="Center"/>
+                <TextBox x:Name="TBEmail" Text="{Binding Info.Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" LostFocus="TBEmail_LostFocus" MinWidth="120" MaxHeight="25" />
+            </StackPanel>
+            <StackPanel Height="85" Background="Gray"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <TextBlock Text="FName:" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding Info.FName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" MinWidth="120" MaxHeight="25" />
+                <Button Click="Button_Click" Width="23"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <TextBlock Text="LName:" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding Info.LName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" MinWidth="120" MaxHeight="25" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
