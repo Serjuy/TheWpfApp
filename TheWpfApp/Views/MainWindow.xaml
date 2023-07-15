@@ -20,6 +20,8 @@
                 <ListViewItem>
                     <Button x:Name="BtnHome" Height="45" Width="100" Content="Home" Click="BtnHome_Click" />
                 </ListViewItem>
+                <Button x:Name="TicTacToe" Height="60" Width="100" Content="TicTacToe" Click="TicTacToe_Click"/>
+                <ListViewItem/>
             </ListView>
             <Button Grid.Row="1"/>
         </Grid>

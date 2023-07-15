@@ -40,5 +40,10 @@ namespace TheWpfApp
         {
             MainContent.Content = new MainUserControl();
         }
+
+        private void TicTacToe_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new TicTacToeUserControl();
+        }
     }
 }
